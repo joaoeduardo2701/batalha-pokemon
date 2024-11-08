@@ -15,8 +15,8 @@ public class Pokemon
         this.armadura = armadura;
     }
 
-    public void Atacar(int vidaTotal)
+    public void ReceberAtaque(int ataque)
     {
-        vida =  vidaTotal - ataque;
+        vida = (vida + armadura) - ataque;
     }
 }

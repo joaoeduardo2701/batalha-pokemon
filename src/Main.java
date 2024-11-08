@@ -15,7 +15,7 @@ public class Main
 
         System.out.println("Digite os dados do primeiro pokémon: ");
 
-        System.out.print("Nome do primeiro pokémon: ");
+        System.out.print("Nome: ");
         String nome1 = sc.nextLine();
 
         System.out.print("Vida Inicial: ");
@@ -29,11 +29,13 @@ public class Main
 
         Pokemon p1 = new Pokemon(nome1, vida1, ataque1, armadura1);
 
+        sc.nextLine();
+
         // Segundo Pokémon
 
         System.out.println("Digite os dados do segundo pokémon: ");
 
-        System.out.print("Nome do segundo pokémon: ");
+        System.out.print("Nome: ");
         String nome2 = sc.nextLine();
 
         System.out.print("Vida Inicial: ");
@@ -52,15 +54,21 @@ public class Main
         System.out.print("Quantos turnos você deseja executar: ");
         int turnos = sc.nextInt();
 
+
         for (int i = 1; i <= turnos; i++)
         {
-            System.out.println("Turno #" + i);
+            System.out.println("\nTurno #" + i);
+            System.out.println("-------------------------------------");
 
-            p1.Atacar(p2.vida + p2.armadura);
-            p2.Atacar(p1.vida + p1.armadura);
+            p1.ReceberAtaque(p2.ataque);
+            p2.ReceberAtaque(p1.ataque);
 
             System.out.println(p1.nome + ": " + p1.vida + " de vida");
             System.out.println(p2.nome + ": " + p2.vida + " de vida");
+
+            System.out.println("-------------------------------------");
         }
+
+        System.out.println("\nFim do Combate");
     }
 }
